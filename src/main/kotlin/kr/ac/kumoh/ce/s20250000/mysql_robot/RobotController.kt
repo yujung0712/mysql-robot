@@ -18,4 +18,9 @@ class RobotController(val service: RobotService) {
         val robots = service.getAllRobots()
         return ResponseEntity.ok(robots)
     }
+
+    @GetMapping("/with-weapons")
+    fun getRobotsWithWeapons(): ResponseEntity<List<EquipmentDto>> {
+        return ResponseEntity.ok(service.getRobotWithWeapons())
+    }
 }
